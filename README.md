@@ -1,7 +1,5 @@
 # Site-Entry-Tracker-YOLOv8
 
-## Overview
-
 The Site-Entry-Tracker-YOLOv8 is a sophisticated artificial intelligence model developed to enhance safety and operational efficiency on construction sites. Utilising the cutting-edge YOLOv8 algorithm, this tool has been meticulously trained to identify critical safety and logistical elements, including hardhats, safety vests, masks, vehicles, machinery, and safety cones.
 
 The core functionality of this application revolves around the innovative use of safety cones to establish a virtual boundary at site entrances and exits. By recognising the central points between strategically placed cones, the system creates an imaginary line that serves as a threshold for tracking movements. This approach enables the automated counting of personnel, vehicles, and machinery, thereby facilitating real-time management and safety compliance.
