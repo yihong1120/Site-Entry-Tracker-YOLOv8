@@ -1,9 +1,9 @@
 import argparse
 from pathlib import Path
 from dotenv import load_dotenv
-from monitor_logger import setup_logging
-from live_stream_tracker import LiveStreamDetector
-from track_and_count import LiveStreamSafetyMonitor
+from src.monitor_logger import setup_logging
+from src.live_stream_tracker import LiveStreamDetector
+from src.track_and_count import LiveStreamSafetyMonitor
 from datetime import datetime
 
 def main(logger, youtube_url: str, model_path: str):
@@ -38,12 +38,12 @@ def main(logger, youtube_url: str, model_path: str):
 
 if __name__ == '__main__':
     # Load environment variables from the specified .env file
-    env_path = Path('../.env')  # Adjust if your .env file is located elsewhere
+    env_path = Path('.env')  # Adjust if your .env file is located elsewhere
     load_dotenv(dotenv_path=env_path)
 
     parser = argparse.ArgumentParser(description='Monitor a live stream for safety hazards using YOLOv8.')
     parser.add_argument('--url', type=str, required=True, help='YouTube video URL for monitoring')
-    parser.add_argument('--model', type=str, default='../models/yolov8n.pt', help='Path to the YOLOv8 model')
+    parser.add_argument('--model', type=str, default='models/pt/best_yolov8x.pt', help='Path to the YOLOv8 model')
     args = parser.parse_args()
 
     logger = setup_logging()  # Set up logging
