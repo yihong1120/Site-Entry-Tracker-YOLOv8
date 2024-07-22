@@ -94,6 +94,16 @@ class LiveStreamSafetyMonitor:
 
         return self.entry_count, self.exit_count
 
+    # TODO: Implement a close section with safety cones method
+
+    # TODO: Implement a method to reset the counts
+
+    # TODO: Implement a method to save the counts to a file
+
+    # TODO: Implement a method to load the counts from a file
+
+    # TODO: Implement a method to display the counts on a GUI
+
 if __name__ == '__main__':
     # Example usage
     tracker = LiveStreamSafetyMonitor()
