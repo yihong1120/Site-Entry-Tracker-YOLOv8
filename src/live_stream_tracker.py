@@ -9,7 +9,7 @@ class LiveStreamDetector:
     A class to perform live stream detection and tracking using YOLOv8.
     """
 
-    def __init__(self, stream_url: str, model_path: str = '../models/yolov8n.pt'):
+    def __init__(self, stream_url: str, model_path: str = '../models/yolov8x.pt'):
         """
         Initialises the live stream detector with a video stream URL and a path to a YOLO model.
 
@@ -47,8 +47,8 @@ class LiveStreamDetector:
                 datas = results[0].boxes.data  # Same as above
 
                 # Convert ids and datas to lists if they are not empty
-                ids_list = ids.numpy().tolist() if ids is not None and len(ids) > 0 else []
-                datas_list = datas.numpy().tolist() if datas is not None and len(datas) > 0 else []
+                ids_list = ids.cpu().numpy().tolist() if ids is not None and len(ids) > 0 else []
+                datas_list = datas.cpu().numpy().tolist() if datas is not None and len(datas) > 0 else []
 
                 # Yield the results
                 yield ids_list, datas_list, frame, timestamp
